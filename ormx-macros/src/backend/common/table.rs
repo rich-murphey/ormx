@@ -144,7 +144,7 @@ fn stream_all_paginated<B: Backend>(table: &Table<B>, column_list: &str) -> Toke
     #[cfg(feature = "sqlite")]
     quote! {
         fn stream_all_paginated<'a>(
-            db: &'a sqlx::Pool<Db>,
+            db: &'a sqlx::Pool<ormx::Db>,
             offset: i64,
             limit: i64,
         ) -> #box_stream<'a, sqlx::Result<Self>> {
